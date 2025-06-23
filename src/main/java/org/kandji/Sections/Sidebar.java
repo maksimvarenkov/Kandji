@@ -63,7 +63,6 @@ public class Sidebar extends BasePage {
         return isElementDisplayed(sidebarUsername);
     }
 
-
     public void waitUntilSidebarDisplayed() {
         waitUntilVisible(sidebarUsername);
     }
@@ -103,12 +102,12 @@ public class Sidebar extends BasePage {
         }
     }
 
-    public void logout(){
+    public void logout() {
         clickAndWaitForElement(sidebarUsername, sidebarLogoutItem);
         sidebarLogoutItem.click();
     }
 
-    public void clickMyProfile(){
+    public void clickMyProfile() {
         clickAndWaitForElement(sidebarUsername, sidebarMyProfileItem);
         sidebarMyProfileItem.click();
     }

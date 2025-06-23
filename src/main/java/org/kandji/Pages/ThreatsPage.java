@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class ThreatsPage extends BasePage {
 
     @FindBy(xpath = "//h4[contains(text(), 'Get started with Kandji EDR')]")
-    private WebElement getStartedNotificationheader;
+    private WebElement getStartedNotificationHeader;
 
     @FindBy(xpath = "//main[@class='full-width-sidebar-opened']/div[1] //a")
     private WebElement learnMoreLink;
@@ -21,20 +21,17 @@ public class ThreatsPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public ThreatsPage waitUntilLoaded(){
-        waitUntilVisible(getStartedNotificationheader);
+    public ThreatsPage waitUntilLoaded() {
+        waitUntilVisible(getStartedNotificationHeader);
         return this;
     }
 
-    public void clickGoToLibraryButton(){
+    public void clickGoToLibraryButton() {
         click(goToLibraryButton);
     }
 
-    public void clickLearnMoreLink(){
+    public void clickLearnMoreLink() {
         click(learnMoreLink);
     }
-
-
-
 
 }

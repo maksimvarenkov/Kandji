@@ -43,7 +43,7 @@ public class LibraryPage extends BasePage {
         return this;
     }
 
-    public LibraryPage waitForLibraryCards(int desiredCount){
+    public LibraryPage waitForLibraryCards(int desiredCount) {
         this.waitUntilDesiredElementsCountDisplayed(libraryCards, desiredCount);
         return this;
     }
@@ -60,7 +60,5 @@ public class LibraryPage extends BasePage {
     public int getLibraryNavigationButtonCount() {
         return navigationButtons.size();
     }
-
-
 
 }

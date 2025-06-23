@@ -15,10 +15,10 @@ public class KandjiDropdown extends BaseTest {
     }
 
     public void chooseValue(String value) {
-        //this one is not accurate. If i choose dropdown too fast looks like it's not registering option i chose
-        //trying sleep
+    /*Looks like dropdown cannot register if I choose an option really quick,probably there's some listener with some
+    * certain update rate. To bypass it have to add this sleep, it sits here for reason, not debug leftover*/
         element.click();
-       WebElement dropdownOption = getDropdownOption(value);
+        WebElement dropdownOption = getDropdownOption(value);
 
         try {
             Thread.sleep(500);

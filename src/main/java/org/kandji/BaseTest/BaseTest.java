@@ -50,4 +50,5 @@ public class BaseTest {
     protected WebDriver getDriver() {
         return driver.get();
     }
+
 }

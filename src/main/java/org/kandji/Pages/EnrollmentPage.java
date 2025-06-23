@@ -70,15 +70,16 @@ public class EnrollmentPage extends BasePage {
         return this;
     }
 
-    public boolean isAutomatedViewActive(){
+    public boolean isAutomatedViewActive() {
         return isElementDisplayed(automatedView);
     }
 
-    public boolean isManualViewActive(){
+    public boolean isManualViewActive() {
         return isElementDisplayed(manualView);
     }
 
-    public boolean isManualViewOpened(){
+    public boolean isManualViewOpened() {
         return isElementDisplayed(downloadBlueprintManualView);
     }
+
 }

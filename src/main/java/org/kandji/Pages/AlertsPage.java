@@ -30,30 +30,30 @@ public class AlertsPage extends BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    public AlertsPage waitUntilLoaded(){
+    public AlertsPage waitUntilLoaded() {
         waitUntilVisible(alertsPageHeader);
         return this;
     }
 
-    public boolean isHeaderVisible(){
+    public boolean isHeaderVisible() {
         return isElementDisplayed(alertsPageHeader);
     }
 
-    public boolean isPlaceholderDisplayed(){
+    public boolean isPlaceholderDisplayed() {
         return isElementDisplayed(alertsPagePlaceHolder);
     }
 
-    public AlertsPage clickAlertsButton(){
+    public AlertsPage clickAlertsButton() {
         click(alertsButton);
         return this;
     }
 
-    public AlertsPage clickMutedButton(){
+    public AlertsPage clickMutedButton() {
         click(mutedButton);
         return this;
     }
 
-    public AlertsPage clickClearedButton(){
+    public AlertsPage clickClearedButton() {
         click(clearedButton);
         return this;
     }

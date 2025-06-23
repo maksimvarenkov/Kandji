@@ -77,11 +77,11 @@ public class UsersPage extends BasePage {
         return this;
     }
 
-    public boolean isUsersViewActive(){
+    public boolean isUsersViewActive() {
         return isElementDisplayed(usersView);
     }
 
-    public boolean isGroupsViewActive(){
+    public boolean isGroupsViewActive() {
         return isElementDisplayed(groupView);
     }
 }

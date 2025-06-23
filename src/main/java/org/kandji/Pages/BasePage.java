@@ -15,7 +15,6 @@ import java.util.Set;
 public class BasePage {
     protected WebDriver driver;
     private final WebDriverWait wait;
-
     private Set<String> windowHandles;
     private String originalWindowHandle;
 
@@ -98,7 +97,7 @@ public class BasePage {
     }
 
     //we don't really need it, we could just check href for <a> and it should be enough, but just for demonstration
-    public void switchToNewTab(){
+    public void switchToNewTab() {
         originalWindowHandle = driver.getWindowHandle();
         windowHandles = driver.getWindowHandles();
 
@@ -111,11 +110,11 @@ public class BasePage {
         }
     }
 
-    public void switchToOriginalWindow(){
+    public void switchToOriginalWindow() {
         driver.switchTo().window(originalWindowHandle);
     }
 
-    public void closeCurrentTab(){
+    public void closeCurrentTab() {
         driver.close();
     }
 

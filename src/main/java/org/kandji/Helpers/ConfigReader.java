@@ -23,4 +23,5 @@ public class ConfigReader {
     public String getProperty(String key) {
         return config.getProperty(key);
     }
+
 }

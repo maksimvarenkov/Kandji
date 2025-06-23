@@ -21,7 +21,7 @@ public class EmptyPageContentAssertions {
         Assert.assertTrue(devicesPage.isPrismNavigationLinksExists(), "Checking that prism navigation links exists");
     }
 
-    public void verifyEnrollmentPageAutomatedViewContent(EnrollmentPage enrollmentPage){
+    public void verifyEnrollmentPageAutomatedViewContent(EnrollmentPage enrollmentPage) {
         Assert.assertTrue(enrollmentPage.isHeaderExist(), "Checking that header on Enrollment page exists");
         Assert.assertTrue(enrollmentPage.isAutomatedViewActive(), "Checking that Automated view is active");
         Assert.assertEquals(enrollmentPage.getActiveTabName(), "Automated Device Enrollment", "Checking that Automated view tab active");
@@ -29,7 +29,7 @@ public class EmptyPageContentAssertions {
         Assert.assertTrue(enrollmentPage.isEmptyDevicesPlaceholderExists(), "Checking that empty devices placeholder exists");
     }
 
-    public void verifyEnrollmentPageManualViewContent(EnrollmentPage enrollmentPage){
+    public void verifyEnrollmentPageManualViewContent(EnrollmentPage enrollmentPage) {
         Assert.assertTrue(enrollmentPage.isHeaderExist(), "Checking that header on Enrollment page exists");
         Assert.assertTrue(enrollmentPage.isManualViewActive(), "Checking that Manual view is active");
         Assert.assertEquals(enrollmentPage.getInactiveTabName(), "Automated Device Enrollment", "Checking that Automated view tab is not active");
@@ -72,18 +72,20 @@ public class EmptyPageContentAssertions {
         Assert.assertTrue(alertsPage.isPlaceholderDisplayed(), "Checking that placeholder displayed");
     }
 
-    public void verifyMyProfilePageGeneralViewContent(MyProflePage myProflePage){
-        Assert.assertTrue(myProflePage.isHeaderExist(), "Checking that header on My Profile page exists");
-        Assert.assertTrue(myProflePage.isGeneralViewActive(), "Checking that General view is active");
-        Assert.assertEquals(myProflePage.getActiveTabName(), "General", "Checking that Automated view tab active");
-        Assert.assertEquals(myProflePage.getInactiveTabName(), "Multi-Factor Authentication", "Checking that Multi-Factor Authentication tab is not active");
-        Assert.assertTrue(myProflePage.isGeneralContentDsipalyed(), "Checking that general view content exists");
+    public void verifyMyProfilePageGeneralViewContent(MyProfilePage myProfilePage) {
+        Assert.assertTrue(myProfilePage.isHeaderExist(), "Checking that header on My Profile page exists");
+        Assert.assertTrue(myProfilePage.isGeneralViewActive(), "Checking that General view is active");
+        Assert.assertEquals(myProfilePage.getActiveTabName(), "General", "Checking that Automated view tab active");
+        Assert.assertEquals(myProfilePage.getInactiveTabName(), "Multi-Factor Authentication", "Checking that Multi-Factor Authentication tab is not active");
+        Assert.assertTrue(myProfilePage.isGeneralContentDsipalyed(), "Checking that general view content exists");
     }
 
-    public void verifyMyProfilePageMFAViewContent(MyProflePage myProflePage){
-        Assert.assertTrue(myProflePage.isHeaderExist(), "Checking that header on My Profile page exists");
-        Assert.assertTrue(myProflePage.isMFAViewActive(), "Checking that MFA view is active");
-        Assert.assertEquals(myProflePage.getInactiveTabName(), "General", "Checking that General view tab inactive");
-        Assert.assertEquals(myProflePage.getActiveTabName(), "Multi-Factor Authentication", "Checking that Multi-Factor Authentication tab is active");
-        Assert.assertTrue(myProflePage.isMFAContentDsipalyed(), "Checking that MFA view content exists");    }
+    public void verifyMyProfilePageMFAViewContent(MyProfilePage myProfilePage) {
+        Assert.assertTrue(myProfilePage.isHeaderExist(), "Checking that header on My Profile page exists");
+        Assert.assertTrue(myProfilePage.isMFAViewActive(), "Checking that MFA view is active");
+        Assert.assertEquals(myProfilePage.getInactiveTabName(), "General", "Checking that General view tab inactive");
+        Assert.assertEquals(myProfilePage.getActiveTabName(), "Multi-Factor Authentication", "Checking that Multi-Factor Authentication tab is active");
+        Assert.assertTrue(myProfilePage.isMFAContentDsipalyed(), "Checking that MFA view content exists");
+    }
+
 }

@@ -9,21 +9,21 @@ import org.testng.annotations.Test;
 
 public class MyProfilePageContentTest extends BaseTest {
     Sidebar sidebar;
-    MyProflePage myProflePage;
+    MyProfilePage myProfilePage;
     EmptyPageContentAssertions pageContentAssertions = new EmptyPageContentAssertions();
 
     @Test
     void myProfilePageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.clickMyProfile();
-        myProflePage = new MyProflePage(getDriver());
-        myProflePage.waitUntilPageLoaded();
-        Assert.assertTrue(myProflePage.getURL().contains("user-profile"), "Checking that URL matches and has ser-profile");
-        pageContentAssertions.verifyMyProfilePageGeneralViewContent(myProflePage);
+        myProfilePage = new MyProfilePage(getDriver());
+        myProfilePage.waitUntilPageLoaded();
+        Assert.assertTrue(myProfilePage.getURL().contains("user-profile"), "Checking that URL matches and has ser-profile");
+        pageContentAssertions.verifyMyProfilePageGeneralViewContent(myProfilePage);
 
-        myProflePage.chooseMFAView();
-        Assert.assertTrue(myProflePage.getURL().contains("user-profile/mfa"), "Checking that URL matches and has ser-profile");
-        pageContentAssertions.verifyMyProfilePageMFAViewContent(myProflePage);
+        myProfilePage.chooseMFAView();
+        Assert.assertTrue(myProfilePage.getURL().contains("user-profile/mfa"), "Checking that URL matches and has ser-profile");
+        pageContentAssertions.verifyMyProfilePageMFAViewContent(myProfilePage);
     }
 
 }

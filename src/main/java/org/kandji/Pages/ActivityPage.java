@@ -25,8 +25,6 @@ public class ActivityPage extends BasePage {
     @FindBy(css = ".activity-tab-new-description")
     private List<WebElement> results;
 
-    private WebElement dropdownOption;
-
     public ActivityPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -48,32 +46,29 @@ public class ActivityPage extends BasePage {
         return this;
     }
 
-    public ActivityPage fillDataRangeDropdown(String value){
+    public ActivityPage waitUntilDesiredSearchCountDisplayed(int desiredCount) {
+        waitUntilDesiredElementsCountDisplayed(results, desiredCount);
+        return this;
+    }
+
+    public ActivityPage fillDateRangeDropdown(String value) {
         KandjiDropdown kandjiDropdown = new KandjiDropdown(dataRangeInput, driver);
         kandjiDropdown.chooseValue(value);
         activityPageHeader.click();
         return this;
     }
 
-    public ActivityPage waitUntilDesiredSeacrhCountDisplayed(int desiredCount){
-        waitUntilDesiredElementsCountDisplayed(results, desiredCount);
-        return this;
-    }
-
-    public boolean isNoDataPlaceholderDisplayed(){
+    public boolean isNoDataPlaceholderDisplayed() {
         return isElementDisplayed(noDataFoundPlaceholder);
     }
 
-    public ActivityPage waitUntilPlaceholderDisplayed(){
+    public ActivityPage waitUntilPlaceholderDisplayed() {
         waitUntilVisible(noDataFoundPlaceholder);
-
         return this;
     }
 
-    public int getResultsCount(){
+    public int getResultsCount() {
         return results.size();
     }
-
-
 
 }

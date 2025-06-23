@@ -28,11 +28,11 @@ public class BlueprintsPage extends BasePage {
         return this;
     }
 
-    public int getBlueprintCardsCount(){
+    public int getBlueprintCardsCount() {
         return blueprintCards.size();
     }
 
-    public BlueprintsPage fillSearchField(String value){
+    public BlueprintsPage fillSearchField(String value) {
         type(searchInput, value);
         return this;
     }

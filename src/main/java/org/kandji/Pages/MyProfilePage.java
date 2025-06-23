@@ -5,11 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class MyProflePage extends BasePage {
+public class MyProfilePage extends BasePage {
 
     @FindBy(xpath = "//h2[contains(text(), 'Profile')]")
     private WebElement pageHeader;
-
 
     @FindBy(css = "div[role='tablist'] [data-state='inactive']")
     private WebElement inactiveTab;
@@ -36,13 +35,12 @@ public class MyProflePage extends BasePage {
     private WebElement mfaViewContent;
 
 
-
-    public MyProflePage(WebDriver driver) {
+    public MyProfilePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
 
-    public MyProflePage waitUntilPageLoaded() {
+    public MyProfilePage waitUntilPageLoaded() {
         waitUntilVisible(pageHeader);
         return this;
     }
@@ -59,29 +57,30 @@ public class MyProflePage extends BasePage {
         return getTextFromElement(activeTab);
     }
 
-    public MyProflePage chooseGeneralView() {
+    public MyProfilePage chooseGeneralView() {
         clickAndWaitForElement(generalTabButton, generalView);
         return this;
     }
 
-    public MyProflePage chooseMFAView() {
+    public MyProfilePage chooseMFAView() {
         clickAndWaitForElement(mfaTabButton, mfaView);
         return this;
     }
 
-    public boolean isGeneralViewActive(){
+    public boolean isGeneralViewActive() {
         return isElementDisplayed(generalView);
     }
 
-    public boolean isMFAViewActive(){
+    public boolean isMFAViewActive() {
         return isElementDisplayed(mfaView);
     }
 
-    public boolean isMFAContentDsipalyed(){
+    public boolean isMFAContentDsipalyed() {
         return isElementDisplayed(mfaViewContent);
     }
 
-    public boolean isGeneralContentDsipalyed(){
+    public boolean isGeneralContentDsipalyed() {
         return isElementDisplayed(generalViewContent);
     }
+
 }

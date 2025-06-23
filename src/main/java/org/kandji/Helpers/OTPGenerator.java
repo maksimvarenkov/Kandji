@@ -10,7 +10,7 @@ import java.time.Instant;
 
 public class OTPGenerator {
 
-    public String generateOTPPassword(){
+    public String generateOTPPassword() {
         String token = new ConfigReader().getProperty("user_secret_token");
 
         Base32 base32 = new Base32();

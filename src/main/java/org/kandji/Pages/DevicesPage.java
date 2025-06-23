@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
+@SuppressWarnings("SpellCheckingInspection")
 public class DevicesPage extends BasePage {
 
     @FindBy(xpath = "//h2[contains(text(), 'Devices')]")
@@ -72,15 +73,16 @@ public class DevicesPage extends BasePage {
         return this;
     }
 
-    public boolean isDevicesViewActive(){
+    public boolean isDevicesViewActive() {
         return isElementDisplayed(devicesView);
     }
 
-    public boolean isPrismViewActive(){
+    public boolean isPrismViewActive() {
         return isElementDisplayed(prismView);
     }
 
-    public boolean isPrismNavigationLinksExists(){
+    public boolean isPrismNavigationLinksExists() {
         return !prismViewNavigationLinks.isEmpty();
     }
+
 }
