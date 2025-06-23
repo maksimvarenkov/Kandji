@@ -65,7 +65,6 @@ public class BasePage {
     }
 
     public String getURL() {
-        System.out.println(driver.getCurrentUrl());
         return driver.getCurrentUrl();
     }
 

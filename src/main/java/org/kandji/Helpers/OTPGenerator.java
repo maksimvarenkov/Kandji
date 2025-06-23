@@ -28,8 +28,6 @@ public class OTPGenerator {
             throw new RuntimeException("Invalid Secret Key for HMAC-SHA1", e);
         }
 
-        System.out.println("OTP:" + String.format("%06d", otp));
-
         return String.format("%06d", otp);
     }
 
