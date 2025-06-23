@@ -1,4 +1,4 @@
-package KadjiSmokeTest;
+package KandjiSmokeTest;
 
 import org.kandji.Assertions.EmptyPageContentAssertions;
 import org.kandji.BaseTest.BaseTest;

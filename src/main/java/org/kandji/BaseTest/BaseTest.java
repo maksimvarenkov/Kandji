@@ -19,7 +19,7 @@ public class BaseTest {
     public void setupTest() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--headless");
+   //     chromeOptions.addArguments("--headless");
 
         WebDriver localDriver = new ChromeDriver(chromeOptions);
         localDriver.manage().window().maximize();

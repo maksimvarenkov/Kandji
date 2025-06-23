@@ -1,5 +1,6 @@
-package KadjiSmokeTest;
+package KandjiSmokeTest;
 
+import io.qameta.allure.Description;
 import org.kandji.Assertions.EmptyPageContentAssertions;
 import org.kandji.BaseTest.BaseTest;
 import org.kandji.Pages.*;
@@ -11,7 +12,8 @@ public class UsersPageContentTest extends BaseTest {
     Sidebar sidebar;
     EmptyPageContentAssertions pageContentAssertions = new EmptyPageContentAssertions();
 
-    @Test
+    @Test(description = "Users page content verification")
+    @Description("Checking that empty Users page has proper URL, header and different views working ")
     void usersPageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.chooseMenuItem("Users");

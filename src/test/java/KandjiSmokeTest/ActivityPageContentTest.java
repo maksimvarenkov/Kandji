@@ -1,4 +1,4 @@
-package KadjiSmokeTest;
+package KandjiSmokeTest;
 
 import org.kandji.BaseTest.BaseTest;
 import org.kandji.Pages.*;
