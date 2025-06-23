@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class EnrollmentPageContentTest extends BaseTest {
+
     Sidebar sidebar;
     EnrollmentPage enrollmentPage;
     EmptyPageContentAssertions pageContentAssertions = new EmptyPageContentAssertions();
@@ -16,6 +17,7 @@ public class EnrollmentPageContentTest extends BaseTest {
     void enrollmentPageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.chooseMenuItem("Enrollment");
+
         enrollmentPage = new EnrollmentPage(getDriver());
         enrollmentPage.waitUntilPageLoaded();
         Assert.assertTrue(enrollmentPage.getURL().contains("add-devices"), "Checking that URL matches and has add-devices");

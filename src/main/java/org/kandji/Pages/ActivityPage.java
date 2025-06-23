@@ -23,7 +23,7 @@ public class ActivityPage extends BasePage {
     private WebElement noDataFoundPlaceholder;
 
     @FindBy(css = ".activity-tab-new-description")
-    private List<WebElement> results;
+    private List<WebElement> listDescriptionItems;
 
     public ActivityPage(WebDriver driver) {
         super(driver);
@@ -39,22 +39,32 @@ public class ActivityPage extends BasePage {
         return isElementDisplayed(activityPageHeader);
     }
 
-    public ActivityPage fillActivityDropdown(String value) {
-        KandjiDropdown kandjiDropdown = new KandjiDropdown(activityTypeSelector, driver);
+    private void fillDropdown(String name, String value) {
+        KandjiDropdown kandjiDropdown;
+        if (name.equals("activity")) {
+            kandjiDropdown = new KandjiDropdown(activityTypeSelector, driver);
+        } else if (name.equals("date")) {
+            kandjiDropdown = new KandjiDropdown(dataRangeInput, driver);
+        } else {
+            kandjiDropdown = new KandjiDropdown(activityTypeSelector, driver);
+        }
+
         kandjiDropdown.chooseValue(value);
         activityPageHeader.click();
+    }
+
+    public ActivityPage fillActivityDropdown(String value) {
+        fillDropdown("activity", value);
         return this;
     }
 
     public ActivityPage waitUntilDesiredSearchCountDisplayed(int desiredCount) {
-        waitUntilDesiredElementsCountDisplayed(results, desiredCount);
+        waitUntilDesiredElementsCountDisplayed(listDescriptionItems, desiredCount);
         return this;
     }
 
     public ActivityPage fillDateRangeDropdown(String value) {
-        KandjiDropdown kandjiDropdown = new KandjiDropdown(dataRangeInput, driver);
-        kandjiDropdown.chooseValue(value);
-        activityPageHeader.click();
+        fillDropdown("date", value);
         return this;
     }
 
@@ -68,7 +78,7 @@ public class ActivityPage extends BasePage {
     }
 
     public int getResultsCount() {
-        return results.size();
+        return listDescriptionItems.size();
     }
 
 }

@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 public class BasePage {
+
     protected WebDriver driver;
     private final WebDriverWait wait;
     private Set<String> windowHandles;
@@ -80,6 +81,10 @@ public class BasePage {
         }
     }
 
+    /*
+    It's not really elegant solution, but quickest for implementation. In future it have to be replaced
+    to lambda with fluent wait
+     */
     public void waitUntilDesiredElementsCountDisplayed(List<WebElement> elementList, int desiredCount) {
         for (int i = 0; i < 10; i++) {
             if (elementList.size() == desiredCount) {

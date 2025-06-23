@@ -7,6 +7,7 @@ import org.kandji.Sections.Sidebar;
 import org.testng.annotations.Test;
 
 public class AlertsPageContentTest extends BaseTest {
+
     Sidebar sidebar;
     AlertsPage alertsPage;
     EmptyPageContentAssertions pageContentAssertions = new EmptyPageContentAssertions();
@@ -15,6 +16,7 @@ public class AlertsPageContentTest extends BaseTest {
     void alertsPageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.chooseMenuItem("Alerts");
+
         alertsPage = new AlertsPage(getDriver());
         alertsPage.waitUntilLoaded();
 

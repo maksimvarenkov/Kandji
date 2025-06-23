@@ -7,16 +7,18 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ActivityPageContentTest extends BaseTest {
+
     Sidebar sidebar;
     ActivityPage activityPage;
-
 
     @Test
     void activityPageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.chooseMenuItem("Activity");
+
         activityPage = new ActivityPage(getDriver());
         activityPage.waitUntilLoaded();
+
         Assert.assertTrue(sidebar.getURL().contains("activity"), "Checking that URL matches and has activity");
         activityPage.fillActivityDropdown("Blueprint Name Changed");
         activityPage.waitUntilDesiredSearchCountDisplayed(2);

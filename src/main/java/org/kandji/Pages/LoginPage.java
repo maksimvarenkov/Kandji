@@ -24,6 +24,9 @@ public class LoginPage extends BasePage {
     @FindBy(id = "prompt-logo-center")
     private WebElement kandjiLogo;
 
+    @FindBy(id = "id=error-element-code")
+    private WebElement invalidOTPMessage;
+
     String baseUrl;
     String username;
     String password;
@@ -73,6 +76,14 @@ public class LoginPage extends BasePage {
 
     public void loginToApplicationWithOTP() {
         fillCredentials().clickSubmit().fillOTPcode().clickSubmit();
+    }
+
+    public void fillOTPAndSubmit() {
+        fillOTPcode().clickSubmit();
+    }
+
+    public boolean isInvalidOTPCodeMessageDisaplyed(){
+        return isElementDisplayed(invalidOTPMessage);
     }
 
 }

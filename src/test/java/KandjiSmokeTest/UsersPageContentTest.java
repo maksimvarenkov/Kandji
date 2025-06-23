@@ -9,6 +9,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class UsersPageContentTest extends BaseTest {
+
     Sidebar sidebar;
     EmptyPageContentAssertions pageContentAssertions = new EmptyPageContentAssertions();
 
@@ -17,6 +18,7 @@ public class UsersPageContentTest extends BaseTest {
     void usersPageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.chooseMenuItem("Users");
+
         UsersPage usersPage = new UsersPage(getDriver());
         usersPage.waitUntilPageLoaded();
         Assert.assertTrue(sidebar.getURL().contains("users"), "Checking that URL matches and has users");

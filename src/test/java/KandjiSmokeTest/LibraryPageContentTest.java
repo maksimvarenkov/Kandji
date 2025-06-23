@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class LibraryPageContentTest extends BaseTest {
+
     Sidebar sidebar;
     LibraryPage libraryPage;
 
@@ -14,6 +15,7 @@ public class LibraryPageContentTest extends BaseTest {
     void libraryPageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.chooseMenuItem("Library");
+
         libraryPage = new LibraryPage(getDriver());
         libraryPage.waitUntilPageLoaded();
 

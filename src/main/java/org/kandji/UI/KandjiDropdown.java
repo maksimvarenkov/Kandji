@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class KandjiDropdown extends BaseTest {
+
     private final WebElement element;
     private final WebDriver driver;
 
@@ -14,9 +15,9 @@ public class KandjiDropdown extends BaseTest {
         this.driver = driver;
     }
 
-    public void chooseValue(String value) {
     /*Looks like dropdown cannot register if I choose an option really quick,probably there's some listener with some
-    * certain update rate. To bypass it have to add this sleep, it sits here for reason, not debug leftover*/
+     * certain update rate. To bypass it have to add this sleep, it sits here for reason, not debug leftover*/
+    public void chooseValue(String value) {
         element.click();
         WebElement dropdownOption = getDropdownOption(value);
 

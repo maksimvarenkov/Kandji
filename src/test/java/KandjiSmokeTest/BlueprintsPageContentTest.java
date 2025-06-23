@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class BlueprintsPageContentTest extends BaseTest {
+
     Sidebar sidebar;
     BlueprintsPage blueprintsPage;
 
@@ -14,6 +15,7 @@ public class BlueprintsPageContentTest extends BaseTest {
     void blueprintsPageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.chooseMenuItem("Blueprints");
+
         blueprintsPage = new BlueprintsPage(getDriver());
         blueprintsPage.waitUntilPageLoaded();
 

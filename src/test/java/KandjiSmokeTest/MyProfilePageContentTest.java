@@ -8,6 +8,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class MyProfilePageContentTest extends BaseTest {
+
     Sidebar sidebar;
     MyProfilePage myProfilePage;
     EmptyPageContentAssertions pageContentAssertions = new EmptyPageContentAssertions();
@@ -16,6 +17,7 @@ public class MyProfilePageContentTest extends BaseTest {
     void myProfilePageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.clickMyProfile();
+
         myProfilePage = new MyProfilePage(getDriver());
         myProfilePage.waitUntilPageLoaded();
         Assert.assertTrue(myProfilePage.getURL().contains("user-profile"), "Checking that URL matches and has ser-profile");

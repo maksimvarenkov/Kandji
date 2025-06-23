@@ -7,6 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class ThreatsPageContentTest extends BaseTest {
+
     Sidebar sidebar;
     ThreatsPage threatsPage;
 
@@ -14,6 +15,7 @@ public class ThreatsPageContentTest extends BaseTest {
     void threatsPageContentTest() {
         sidebar = new Sidebar(getDriver());
         sidebar.chooseMenuItem("Threats");
+
         threatsPage = new ThreatsPage(getDriver()).waitUntilLoaded();
         threatsPage.waitUntilLoaded();
         Assert.assertTrue(threatsPage.getURL().contains("threat"), "Checking that URL matches and has threats");
